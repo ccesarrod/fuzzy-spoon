@@ -1,0 +1,40 @@
+﻿
+
+<div class="container">
+    <h2>Order Summary</h2>
+    <div class="row">
+
+        <!-- items -->
+        <table class="table table-bordered col-xs-6 col-md-4">
+            <!-- header -->
+            <tr class="well">
+                <td ><b>Item</b></td>
+                <td class="tdCenter"><b>Quantity</b></td>
+                <td class="tdRight"><b>Price</b></td>
+
+            </tr>
+
+            <!-- cart items -->
+            <tr ng-repeat="item in items | orderBy:'name'">
+                <td>{{item.name}}</td>
+                <td class="tdCenter">
+                    <div class="input-append">
+                        <!-- use type=tel instead of to prevent spinners -->
+                        <b class="col-xs-offset-3 text-center">{{item.quantity}}</b>
+                    </div>
+                </td>
+                <td class="tdRight">{{item.price * item.quantity | currency}}</td>
+
+            </tr>
+            <!-- footer -->
+            <tr class="well">
+                <td><b>Total</b></td>
+                <td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
+                <td class="tdRight"><b>{{cart.getTotalPrice() | currency}}</b></td>
+            </tr>
+        </table>
+    </div>
+    <div class="row "><button class="btn btn-default col col-lg-offset-6 col-xs-offset-10" ng-click="submitCart()">Submit</button>
+    </div>
+</div>
+

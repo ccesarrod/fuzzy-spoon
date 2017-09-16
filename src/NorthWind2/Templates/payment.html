@@ -1,0 +1,21 @@
+﻿
+<div class="row">
+
+ 
+
+ <form name="paymentForm" novalidate>
+     <div class="well">
+         <h3>Payment Method</h3>
+         <div class="form-group">
+             <label>Credit Card Number</label>
+             <input name="number" class="form-control"
+                    ng-model="customer.shipping.creditcard" required/>
+             <span class="error" ng-show="paymentForm.number.$error.required">
+                    Please enter credit card
+                </span>
+
+         </div>
+     </div>
+     <div class="row col-sm-offset-10"><a href="#/Summary" class="btn btn-primary">Complete order</a></div>
+</form>
+</div>

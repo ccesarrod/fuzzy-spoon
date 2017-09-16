@@ -1,0 +1,33 @@
+﻿@model IEnumerable<NorthWindCoreData.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categories</h2>
+
+
+
+<div class="row">
+    <div class="list-group">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+                <a href=@Url.Action("Products","Category",new {categoryId=@item.CategoryID})>
+
+                    <img src="~/images/Categories/@string.Format("Cat{0}.jpg", item.CategoryID)" alt="@item.Description" class="img-responsive" />
+                </a>
+                    <div class="text-left">
+                        <small class="text-muted">@item.CategoryName</small>
+                    </div>
+               
+
+            </div>
+        }
+
+
+    </div>
+</div>
+
+

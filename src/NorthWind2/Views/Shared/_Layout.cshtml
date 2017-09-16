@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="registrationModule">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/cssbundles")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/ngNotificationsBar.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="~/Scripts/angularApp/app.js"></script>
+    <script src="~/Scripts/factories/cartrepository.js"></script>
+    <script src="~/Scripts/angularController/cartController.js"></script>
+    <script src="~/Scripts/factories/userservice.js"></script>
+</head>
+<body ng-controller="cartController">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar">testst</span>
+                    <span class="icon-bar">dddddddddddddddddd</span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <notifications-bar class="notifications"></notifications-bar>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Northwind", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Products", "Index", "Product", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Categories", "Index", "Category", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>
+
+                    </li>
+                </ul>
+                <a href="@Url.Action("index", "Cart")" id="lastVal"><img src="~/images/glyphicons-203-shopping-cart.png" class="img-thumbnail bg-info" />({{lastVal}})</a>
+
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+ 
+    @RenderSection("Angularscripts", required: false)
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

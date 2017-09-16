@@ -1,0 +1,15 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Cart View</h3>
+</div>
+<div >
+   
+    <div class="modal-body"  class="row list-group-item col-lg-2 col-md-6 col-sm-4 col-xs-1 col-md-offset-12" >
+       
+            <img ng-repeat="product in products" ng-src="./images/Products/{{product.id}}.jpg" style="max-height: 40px;margin-right: 5px" alt="{{product.name}}"  title="{{product.name}}"/>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

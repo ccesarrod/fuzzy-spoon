@@ -1,0 +1,41 @@
+﻿@model List<NorthWindCoreData.Models.Product>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section AngularScripts
+{
+   
+<script src="~/Scripts/angularController/cartController.js"></script>
+
+
+}
+<h2>Catalag</h2>
+<div class="row" ng-controller="cartController">
+    @foreach (var item in Model)
+    {
+
+
+        <div class="row list-group-item col-lg-2 col-md-6 col-sm-4 col-xs-1 col-md-offset-2" style="overflow: hidden">
+            <div>
+                <img src="~/images/Products/@string.Format("{0}.jpg", item.ProductID)" class="img-responsive" style="max-height: 200px;overflow: hidden" />
+            </div>
+
+            <div class="caption">
+                <h5>@item.ProductName</h5>
+                <p>Units: @item.QuantityPerUnit</p>
+                <p>Price: @item.UnitPrice</p>
+
+                <p>
+                    <button class="btn bg-primary" ng-click="addCart(@item.ProductID,'@HttpUtility.JavaScriptStringEncode(item.ProductName)',@item.UnitPrice,1)">Add to chart</button>
+                </p>
+            </div>
+
+
+        </div>
+
+    }
+</div>
+

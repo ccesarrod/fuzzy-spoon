@@ -1,0 +1,28 @@
+﻿
+<html data-ng-app="registrationModule">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/jquery.cookie.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/ngNotificationsBar.min.js"></script>
+    <script src="Scripts/angularApp/app.js"></script>
+    <script src="Scripts/factories/cartrepository.js"></script>
+    <script src="Scripts/angularController/cartController.js"></script>
+</head>
+<body ng-controller="cartController">
+    <h2>Orders Details</h2>
+
+    Orders
+    <div class="text-center">
+        <a href="#/Gifts">
+            Gift
+        </a>
+        <a href="#/Customer">
+            cutomer order
+        </a>
+    </div>
+    <div ng-view></div>
+</body>
+</html>
