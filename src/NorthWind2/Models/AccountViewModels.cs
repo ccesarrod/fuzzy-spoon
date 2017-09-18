@@ -66,6 +66,13 @@ namespace NorthWind2.Models
     public class RegisterViewModel
     {
         [Required]
+       [StringLength(5, ErrorMessage = "The {0} must be at least {1} characters long.", MinimumLength = 5)]
+        [DataType(DataType.Text)]
+        [Display(Name = "User ID")]
+        
+       public string UserId { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

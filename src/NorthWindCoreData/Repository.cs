@@ -62,6 +62,8 @@ namespace NorthWindCoreData
             else
             {
                 DbSet.Add(entity);
+                Save();
+               
             }
           
         }

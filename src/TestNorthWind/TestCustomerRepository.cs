@@ -27,12 +27,21 @@ namespace TestNorthWind
             _clientCart = new List<CartViewModel> { _viewModel };
         }
 
+
         [TearDown]
         public void End()
         {
             _service = null;
         }
 
+
+        [Test]
+        public void it_should_add_customer()
+        {
+            _service.Add(new Customer { Email = "test1@gmail.com", ContactName = "test1@gmail.com", Password = "model.Password" , CustomerID="test1", CompanyName="xcnvd"});
+            var result = _service.Find(x => x.Email == "test@gmail.com").ToList();
+            Assert.AreEqual(result.Count, 1);
+        }
         [Test]
 
         public void it_should_sync_shopping_cart()

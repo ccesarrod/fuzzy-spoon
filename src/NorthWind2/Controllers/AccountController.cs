@@ -164,7 +164,10 @@ namespace NorthWind2.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    _customerRepository.Add(new Customer { Email = model.Email, ContactName = model.Email, Password = model.Password });
+                    _customerRepository.Add(new Customer { Email = model.Email, ContactName = model.Email,
+                                Password = model.Password,
+                                CustomerID = model.UserId.ToUpper(),
+                                CompanyName = model.UserId});
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

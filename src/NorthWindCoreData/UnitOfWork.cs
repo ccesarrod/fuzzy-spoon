@@ -37,7 +37,7 @@ namespace NorthWindCoreData
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
 
