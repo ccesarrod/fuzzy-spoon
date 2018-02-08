@@ -1,5 +1,5 @@
 # fuzzy-spoon
 
-This is place holder for a MVC app
+This is a MVC app that uses angularjs in the front end. Not fully developed
 
 Now Testing from local
