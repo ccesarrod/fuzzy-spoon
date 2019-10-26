@@ -1,5 +1,5 @@
 # fuzzy-spoon
 
-This is a MVC app that uses angularjs in the front end. Not fully developed
+This is a MVC app that uses angularjs in the front end. 
 
-Now Testing from local
+Intended to learn and experiment key concepts
